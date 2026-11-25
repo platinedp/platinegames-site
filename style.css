@@ -23,6 +23,7 @@
 }
 
 @font-face { font-family: "Les Flos"; src: url("fonts/LesFlos-Chaos.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Les Flos Texte"; src: url("fonts/LesFlos-Sans.otf") format("opentype"); font-display: swap; } /* même famille, pour les longs textes */
 @font-face { font-family: "Baveuse"; src: url("fonts/Baveuse.otf") format("opentype"); font-display: swap; }
 
 /* 1rem = 10px sur un écran de 1440px, plus petit sur un téléphone */
@@ -297,9 +298,40 @@ ul { list-style: none; }
 .soon__pack { width: 15rem; transform: rotate(-8deg); filter: var(--icon-outline) drop-shadow(var(--shadow-soft)); animation: idle 3.4s ease-in-out -1.4s infinite; }
 
 /* ---------- Barre du bas : asymétrique, opaque ---------- */
-.foot { position: relative; isolation: isolate; display: flex; justify-content: space-between; margin-top: 4rem; padding: 3.6rem 4.4rem 3rem 3.2rem; font-size: 1.6rem; }
-.foot::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse at 50% 50%, transparent 30%, var(--t-vig) 100%), var(--t-bar); clip-path: polygon(0 28%, 46% 0, calc(100% - 30rem) 18%, 100% 6%, 100% 100%, 0 100%); }
-.foot span:last-child { color: var(--t-chat-text); transform: skewX(-8deg); }
+.foot { position: relative; isolation: isolate; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.6rem 3rem; margin-top: 4rem; padding: 3.8rem 4.4rem 3rem 3.2rem; font-size: 1.6rem; }
+.foot::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse at 50% 50%, transparent 30%, var(--t-vig) 100%), var(--t-bar); clip-path: polygon(0 22%, 46% 0, calc(100% - 30rem) 14%, 100% 4%, 100% 100%, 0 100%); }
+.foot__links { display: flex; flex-wrap: wrap; gap: 1rem 2.6rem; }
+.foot__links a { transition: transform .14s var(--press); }
+.foot__links a:hover { transform: scale(1.08); }
+.foot__links a[aria-current] { color: var(--yellow); }
+.foot__copy { color: var(--t-chat-text); transform: skewX(-8deg); }
+
+/* ---------- Pages de texte (confidentialité, assistance, suppression, mentions légales) ---------- */
+.doc { max-width: 96rem; margin: 0 auto; padding: 7rem 4rem 4rem; }
+.doc__date { display: inline-block; margin: 2rem 0 0 3rem; padding: .6rem 1.4rem .9rem; font-size: 1.5rem; color: var(--t-chat-text); --cut: var(--cut-m); --fill: var(--t-chat); transform: skewX(-8deg); }
+.doc__panel { position: relative; isolation: isolate; margin-top: 4rem; padding: 4.4rem 5rem 4.6rem 4.6rem; filter: drop-shadow(var(--shadow-far)); }
+.doc__panel::before, .doc__panel::after { content: ""; position: absolute; clip-path: polygon(var(--cut-xl) 0, 48% .3%, 50% 0, 100% .4%, 99.4% 48%, 100% 52%, 99.2% 100%, 60% 99.7%, 58% 100%, .6% 99.6%, 0 52%, .6% 48%, 0 var(--cut-xl)); }
+.doc__panel::before { inset: -.8rem; z-index: -2; background: linear-gradient(165deg, var(--t-stage), var(--t-edge) 70%); }
+.doc__panel::after { inset: 0; z-index: -1; background: var(--t-band); }
+.doc__panel h2 { margin: 4rem 0 1.4rem; font-size: 2.6rem; font-weight: normal; line-height: 1.1; transform: skewX(-8deg); transform-origin: left; text-shadow: -.1rem -.1rem 0 var(--navy-deep), .1rem -.1rem 0 var(--navy-deep), -.1rem .1rem 0 var(--navy-deep), .1rem .1rem 0 var(--navy-deep), 0 .22rem 0 var(--navy-deep); }
+.doc__panel h2:first-child { margin-top: 0; }
+.doc__panel h3 { margin: 2.4rem 0 .8rem; font-size: 2rem; font-weight: normal; color: var(--yellow); transform: skewX(-8deg); transform-origin: left; }
+.doc__panel p, .doc__panel li { font: 1.8rem/1.55 "Les Flos Texte", var(--font); color: var(--t-chat-text); }
+.doc__panel p + p { margin-top: 1rem; }
+.doc__panel ul, .doc__panel ol { display: grid; gap: .6rem; margin: 1rem 0 0 2.6rem; }
+.doc__panel ul { list-style: square; }
+.doc__panel ul li::marker { color: var(--yellow); }
+.doc__panel ol li::marker { color: var(--yellow); font-family: var(--font); }
+.doc__panel strong { color: #fff; font-weight: normal; font-family: var(--font); }
+.doc__panel a:not(.ds-btn) { color: var(--yellow); text-decoration: underline; text-decoration-thickness: .15rem; text-underline-offset: .3rem; }
+.doc__box { margin: 2rem 0 0 1.4rem; padding: 1.8rem 2.2rem 2rem; --fill: var(--t-chat); filter: drop-shadow(var(--shadow-faint)); }
+.doc__box--warn::after { content: ""; position: absolute; left: 0; top: .4rem; bottom: .4rem; width: .6rem; z-index: 0; background: #ffb347; clip-path: polygon(0 0, 100% 2%, 100% 98%, 0 100%); }
+.doc__mail { display: inline-grid; margin: 1.6rem 0 0 .4rem; }
+.doc__table { width: 100%; margin-top: 1.4rem; border-collapse: collapse; font: 1.6rem/1.45 "Les Flos Texte", var(--font); color: var(--t-chat-text); }
+.doc__table th { padding: 1rem 1.2rem; text-align: left; font: 1.6rem/1.2 var(--font); color: #fff; font-weight: normal; background: var(--t-chat); }
+.doc__table td { padding: 1rem 1.2rem; vertical-align: top; border-bottom: .15rem solid #ffffff1a; }
+.doc__table-wrap { overflow-x: auto; }
+.todo { padding: 0 .4rem; color: var(--navy-deep) !important; font-family: var(--font); background: #ffb347; }
 
 /* ---------- Téléphone ---------- */
 @media (max-width: 820px) {
@@ -346,6 +378,10 @@ ul { list-style: none; }
   .soon__list li { padding: .6rem 1.4rem .9rem 1.6rem; }
   .soon__list li:nth-child(2) { margin: 0 -.6rem 0 1.4rem; }
   .soon__pack { width: 11rem; }
+  .doc { padding: 6rem 1.6rem 3rem; }
+  .doc__panel { padding: 3.4rem 2.4rem 3.6rem 2.4rem; }
+  .doc__panel p, .doc__panel li { font-size: 1.9rem; }
+  .foot { padding: 4.4rem 2.4rem 3rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
