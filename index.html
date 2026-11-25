@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Brainrot TCG · Platine Games</title>
+  <meta name="description" content="Brainrot TCG, le jeu de cartes de monstres brainrot de Platine Games : ouvre des sachets, monte ton équipe de 6 et affronte le monde en combat.">
+  <meta property="og:title" content="Brainrot TCG · Platine Games">
+  <meta property="og:description" content="Ouvre des sachets, monte ton équipe de 6 et affronte le monde en combat.">
+  <meta property="og:image" content="https://platinegames.com/assets/og.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#1c2238">
+  <link rel="icon" href="favicon.png">
+  <link rel="preload" href="fonts/Baveuse.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true"><div class="bg__pattern"></div></div>
+
+  <header class="top">
+    <a class="top__logo" href="#">Platine Games</a>
+    <nav class="top__nav" aria-label="Menu">
+      <a href="#jeu">Le jeu</a>
+      <a href="#cartes">Les cartes</a>
+      <a href="#modes">Les modes</a>
+      <a class="top__cta ds-block cut-hd" href="#bientot">Bientôt</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Accueil : la vidéo à gauche qui s'efface par facettes, le titre à droite -->
+    <section class="hero">
+      <div class="hero__art" aria-hidden="true">
+        <video class="hero__video" src="assets/home-video.mp4" poster="assets/home-illustration.webp" autoplay muted loop playsinline></video>
+      </div>
+      <div class="hero__text">
+        <p class="hero__kicker ds-block cut-bg">Un jeu Platine Games</p>
+        <h1 class="hero__title"><span>Brainrot</span><span>TCG</span></h1>
+        <p class="hero__lead ds-block cut-hd">Ouvre des sachets, monte ton équipe de 6 monstres et affronte le monde en combat.</p>
+        <div class="hero__btns">
+          <a class="ds-btn ds-btn--main ds-block cut-bd" href="#jeu">Découvrir le jeu</a>
+          <a class="ds-btn ds-btn--alt ds-block cut-hg" href="#cartes">Voir les cartes</a>
+        </div>
+      </div>
+      <div class="hero__pack" aria-hidden="true">
+        <span class="hero__halo"></span>
+        <img src="assets/sachet-serie-1.webp" alt="">
+      </div>
+    </section>
+
+    <!-- Le jeu : trois panneaux, jamais alignés -->
+    <section class="sec" id="jeu">
+      <h2 class="sec__title">Le jeu</h2>
+      <div class="feats">
+        <article class="feat feat--sachet">
+          <div class="feat__bg"><img class="feat__shadow" src="assets/sachets-illustration.webp" alt=""><span class="feat__band"></span></div>
+          <img class="feat__art feat__art--photo" src="assets/sachets-illustration.webp" alt="Un sachet de la Série 1 qui s'ouvre">
+          <h3 class="feat__label">Ouvre</h3>
+          <p class="feat__text ds-outline">Un sachet gratuit régulièrement, 10 cartes par sachet, et des raretés qui brillent.</p>
+        </article>
+        <article class="feat feat--equipe">
+          <div class="feat__bg"><img class="feat__shadow" src="assets/hero-pvp.webp" alt=""><span class="feat__band"></span></div>
+          <img class="feat__art" src="assets/hero-pvp.webp" alt="Un monstre pastèque en lunettes de soleil">
+          <h3 class="feat__label">Monte</h3>
+          <p class="feat__text ds-outline">Choisis 6 monstres, leurs objets et leurs attaques. Chaque carte coûte des points : à toi de mélanger les raretés.</p>
+        </article>
+        <article class="feat feat--combat">
+          <div class="feat__bg"><img class="feat__shadow" src="assets/hero-pve.webp" alt=""><span class="feat__band"></span></div>
+          <img class="feat__art" src="assets/hero-pve.webp" alt="Un loup fruit du dragon qui bondit">
+          <h3 class="feat__label">Combats</h3>
+          <p class="feat__text ds-outline">Six contre six, tour par tour : types, météo, terrains. En 3D ou en 2D.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Les cartes : un éventail, puis les raretés -->
+    <section class="sec" id="cartes">
+      <h2 class="sec__title">Les cartes</h2>
+      <p class="sec__lead ds-block cut-bd">Plus de 100 monstres brainrot dans la Série 1. Une nouvelle série tous les deux mois.</p>
+      <div class="fan">
+        <img src="assets/cards/BRS1-022.webp" alt="Carte Lalala" loading="lazy">
+        <img src="assets/cards/BRS1-032.webp" alt="Carte Dom Dom Dohr" loading="lazy">
+        <img src="assets/cards/BRS1-048.webp" alt="Carte Froufrou" loading="lazy">
+        <img src="assets/cards/BRS1-035.webp" alt="Carte Nin Nin" loading="lazy">
+        <img src="assets/cards/BRS1-026.webp" alt="Carte Vroum Faramfam" loading="lazy">
+        <img src="assets/cards/BRS1-051.webp" alt="Carte Orquette" loading="lazy">
+        <img src="assets/cards/BRS1-040.webp" alt="Carte Croco Boom Boom" loading="lazy">
+      </div>
+      <ul class="rarities">
+        <li class="ds-block cut-hg"><span class="ds-rarity ds-rarity--diamond"><i></i><i></i><i></i><i></i></span>Diamants</li>
+        <li class="ds-block cut-bd"><span class="ds-rarity ds-rarity--star"><i></i><i></i><i></i><i></i></span>Étoiles</li>
+        <li class="ds-block cut-hd"><span class="ds-rarity ds-rarity--shining"><i></i><i></i></span>Brillante</li>
+        <li class="ds-block cut-bg rarities__top"><span class="ds-rarity ds-rarity--crown"><i></i></span>Couronne</li>
+      </ul>
+    </section>
+
+    <!-- Les modes : quatre images aux bords hachés, hauteurs et hauts différents -->
+    <section class="sec" id="modes">
+      <h2 class="sec__title">Les modes</h2>
+      <div class="modes">
+        <article class="mode mode--saga">
+          <div class="mode__frame"><img src="assets/saga-illustration.webp" alt="" loading="lazy"></div>
+          <div class="mode__plate ds-block cut-hd"><h3>Histoire</h3><p>Quatre sagas, des boss et des étoiles à gagner.</p></div>
+        </article>
+        <article class="mode mode--pvp">
+          <div class="mode__frame"><img src="assets/pvp-illustration.webp" alt="" loading="lazy"></div>
+          <div class="mode__plate ds-block cut-bg"><h3>PvP</h3><p>Défie un ami ou n'importe qui, en direct.</p></div>
+        </article>
+        <article class="mode mode--classe">
+          <div class="mode__frame"><img src="assets/ranked-illustration.webp" alt="" loading="lazy"></div>
+          <div class="mode__plate ds-block cut-bd"><h3>Classé</h3><p>Du Fer au Grand Maître, une saison après l'autre.</p></div>
+        </article>
+        <article class="mode mode--bourse">
+          <div class="mode__frame"><img src="assets/nav-purse.webp" alt="" loading="lazy"></div>
+          <div class="mode__plate ds-block cut-hg"><h3>Bourse</h3><p>Vends et achète des cartes aux autres joueurs.</p></div>
+        </article>
+      </div>
+      <div class="ranks" aria-label="Les 7 rangs du classé">
+        <img src="assets/ranks/rang-fer.webp" alt="Fer" loading="lazy">
+        <img src="assets/ranks/rang-bronze.webp" alt="Bronze" loading="lazy">
+        <img src="assets/ranks/rang-argent.webp" alt="Argent" loading="lazy">
+        <img src="assets/ranks/rang-or.webp" alt="Or" loading="lazy">
+        <img src="assets/ranks/rang-diamant.webp" alt="Diamant" loading="lazy">
+        <img src="assets/ranks/rang-maitre.webp" alt="Maître" loading="lazy">
+        <img src="assets/ranks/rang-grand-maitre.webp" alt="Grand Maître" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Bientôt -->
+    <section class="sec" id="bientot">
+      <div class="soon">
+        <div class="soon__panel">
+          <h2 class="soon__title">Bientôt</h2>
+          <ul class="soon__list">
+            <li class="ds-block cut-hd"><b>Android et iOS</b><span>En préparation</span></li>
+            <li class="ds-block cut-bg"><b>Version PC</b><span>Sur invitation</span></li>
+          </ul>
+        </div>
+        <img class="soon__pack" src="assets/sachet-serie-1.webp" alt="" loading="lazy">
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© 2026 Platine Games</span>
+    <span>Brainrot TCG</span>
+  </footer>
+</body>
+</html>
